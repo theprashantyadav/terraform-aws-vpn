@@ -50,6 +50,7 @@ variable "managedby" {
 
 variable "customer_ip_address" {
   type        = string
+  default     = ""
   description = "The IP of the Customer Gateway."
 }
 

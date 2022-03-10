@@ -39,7 +39,9 @@ resource "aws_vpn_connection" "default" {
   customer_gateway_id = aws_customer_gateway.main[0].id
   type                = "ipsec.1"
   static_routes_only  = var.vpn_connection_static_routes_only
-  tags                = module.labels.tags
+  tags = merge(
+    module.labels.tags,
+  )
 }
 
 #Module       Gateway Attachment
